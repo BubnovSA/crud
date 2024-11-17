@@ -14,7 +14,11 @@ docker exec -it crud-database-1 psql -U postgres -d testdb
 ```
 ### 4. Run SQL for init:
 ```
-docker exec -it crud-database-1 psql -U postgres -d testdb
+CREATE TABLE items (
+    id SERIAL PRIMARY KEY,
+    name TEXT NOT NULL,
+    description TEXT
+);
 ```
 
 ## After preparation, you can start working with application.
