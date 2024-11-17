@@ -17,7 +17,7 @@ docker exec -it crud-database-1 psql -U postgres -d testdb
 docker exec -it crud-database-1 psql -U postgres -d testdb
 ```
 
-### After preparation, you can start working with application.
+## After preparation, you can start working with application.
 
 ### 1. Use for get all items:
 ```
