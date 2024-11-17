@@ -1,0 +1,30 @@
+services:
+  app:
+    image: $NODE_IMAGE
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    ports:
+        - $APP_PORT:$APP_PORT
+        - $DEBUG_PORT:$DEBUG_PORT
+    environment:
+      - NODE_ENV=development
+    env_file:
+      - .env
+    command: "/bin/sh -c 'yarn debug'"
+    depends_on:
+      - database
+
+  database:
+    image: $POSTGRES_IMAGE
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: testdb
+    ports:
+        - $DB_PORT:$DB_PORT
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:

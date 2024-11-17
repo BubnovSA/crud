@@ -1,0 +1,15 @@
+{
+  "name": "node-postgres-docker",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "debug": "nodemon --inspect=0.0.0.0:9229 src/app.js"
+  },
+  "dependencies": {
+    "pg": "^8.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
